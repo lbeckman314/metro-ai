@@ -1,5 +1,7 @@
 # metro-ai
 
+> [!IMPORTANT]
+>
 > **This is not an official Oregon Metro project.** It is an independent demo created by Liam Beckman as part of an application for the [AI Automation Specialist role](https://www.governmentjobs.com/careers/oregonmetro/jobs/4858424/ai-automation-specialist) (Job No. 2026-0069-IT-4). Oregon Metro's name and branding are used for illustrative purposes only.
 
 **Live site:** [lbeckman314.github.io/metro-ai](https://lbeckman314.github.io/metro-ai)
