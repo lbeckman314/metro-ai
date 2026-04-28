@@ -104,7 +104,7 @@ export default function App() {
           <span className="text-xs text-muted-foreground font-sans">Liam Beckman · liam@liambeckman.com</span>
           <div className="flex gap-4 text-xs text-muted-foreground font-sans">
             <a
-              href="https://github.com/beckmanl314/metro-ai"
+              href="https://github.com/lbeckman314/metro-ai"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-metro-green transition-colors"
