@@ -2,6 +2,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { PromptViewer } from "@/components/PromptViewer"
 import { ScenarioCard } from "@/components/ScenarioCard"
 import { ProcessTimeline } from "@/components/ProcessTimeline"
+import { Admonition } from "@/components/Admonition"
 import { scenarios } from "@/data/scenarios"
 
 export default function App() {
@@ -32,6 +33,13 @@ export default function App() {
 
       {/* page content */}
       <div className="max-w-6xl mx-auto px-8 py-10">
+
+        {/* disclaimer */}
+        <Admonition type="important" className="mb-8">
+          <p>This is not an official Oregon Metro project — it is an independent demo created as part of the AI Automation Specialist application process.</p>
+          
+          <p>Oregon Metro's name and branding are used for illustrative purposes only.</p>
+        </Admonition>
 
         {/* page header */}
         <div className="mb-8 pb-6 border-b border-metro-grey-mid dark:border-neutral-800">
