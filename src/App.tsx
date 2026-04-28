@@ -1,32 +1,68 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { PromptViewer } from "@/components/PromptViewer"
 import { ScenarioCard } from "@/components/ScenarioCard"
+import { ProcessTimeline } from "@/components/ProcessTimeline"
 import { scenarios } from "@/data/scenarios"
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100">
-      <div className="max-w-6xl mx-auto px-8 py-12">
+    <div className="min-h-screen bg-metro-grey-light dark:bg-neutral-950 text-foreground">
 
-        {/* header */}
-        <div className="mb-10">
+      {/* Metro-style top nav bar */}
+      <header className="bg-metro-navy dark:bg-neutral-900 text-white">
+        <div className="max-w-6xl mx-auto px-8 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <span className="font-serif text-lg font-semibold tracking-tight">Oregon Metro</span>
+            <span className="text-metro-grey-mid text-sm hidden sm:inline">·</span>
+            <span className="text-metro-grey-mid text-sm hidden sm:inline">Information Services</span>
+          </div>
+          <a
+            href="https://www.oregonmetro.gov"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-metro-grey-mid hover:text-white transition-colors"
+          >
+            oregonmetro.gov ↗
+          </a>
+        </div>
+      </header>
+
+      {/* Metro green accent bar */}
+      <div className="h-1 bg-metro-green" />
+
+      {/* page content */}
+      <div className="max-w-6xl mx-auto px-8 py-10">
+
+        {/* page header */}
+        <div className="mb-8 pb-6 border-b border-metro-grey-mid dark:border-neutral-800">
           <div className="flex items-center gap-2 mb-3">
-            <span className="inline-flex items-center rounded-full bg-emerald-100 dark:bg-emerald-900 px-2.5 py-0.5 text-xs font-semibold text-emerald-800 dark:text-emerald-200">
+            <span className="inline-flex items-center rounded bg-metro-green-light text-metro-green px-2.5 py-0.5 text-xs font-semibold font-sans uppercase tracking-wide">
               Claude Project
             </span>
-            <span className="text-xs text-neutral-400">Oregon Metro · AI Automation Specialist</span>
+            <span className="text-xs text-muted-foreground">AI Automation Specialist · Job No. 2026-0069-IT-4</span>
           </div>
-          <h1 className="text-3xl font-bold tracking-tight mb-2">AI Automation Specialist Advisor</h1>
-          <p className="text-neutral-500 dark:text-neutral-400 text-base leading-relaxed">
-            A Claude Project system prompt designed to act as an AI advisor for the Metro AI Automation Specialist role.
+          <h1 className="font-serif text-3xl font-semibold text-metro-navy dark:text-white mb-2 tracking-tight">
+            AI Automation Specialist Advisor
+          </h1>
+          <p className="text-muted-foreground text-base leading-relaxed max-w-2xl font-sans">
+            A Claude Project system prompt scoped to Metro's public-sector constraints, tooling
+            stack, and compliance-first automation design — submitted as part of the application
+            for the AI Automation Specialist role.
           </p>
         </div>
 
         {/* tabs */}
         <Tabs defaultValue="prompt">
-          <TabsList className="mb-6">
-            <TabsTrigger value="prompt">System Prompt</TabsTrigger>
-            <TabsTrigger value="scenarios">Example Projects</TabsTrigger>
+          <TabsList className="mb-6 bg-white dark:bg-neutral-900 border border-metro-grey-mid dark:border-neutral-800">
+            <TabsTrigger value="prompt" className="font-sans data-[state=active]:text-metro-green data-[state=active]:border-b-2 data-[state=active]:border-metro-green">
+              System Prompt
+            </TabsTrigger>
+            <TabsTrigger value="scenarios" className="font-sans data-[state=active]:text-metro-green data-[state=active]:border-b-2 data-[state=active]:border-metro-green">
+              Example Scenarios
+            </TabsTrigger>
+            <TabsTrigger value="process" className="font-sans data-[state=active]:text-metro-green data-[state=active]:border-b-2 data-[state=active]:border-metro-green">
+              Build Process
+            </TabsTrigger>
           </TabsList>
 
           <TabsContent value="prompt">
@@ -35,7 +71,7 @@ export default function App() {
 
           <TabsContent value="scenarios">
             <div className="space-y-6">
-              <p className="text-sm text-neutral-500 dark:text-neutral-400">
+              <p className="text-sm text-muted-foreground font-sans">
                 Three scenarios used to test and refine the prompt — covering workflow design,
                 compliance gating, and prompt review.
               </p>
@@ -45,17 +81,25 @@ export default function App() {
             </div>
           </TabsContent>
 
+          <TabsContent value="process">
+            <div className="space-y-6">
+              <p className="text-sm text-muted-foreground font-sans">
+                How the system prompt was built — from job description to tested, iterated specification.
+              </p>
+              <ProcessTimeline />
+            </div>
+          </TabsContent>
         </Tabs>
 
         {/* footer */}
-        <div className="mt-16 pt-6 border-t border-neutral-200 dark:border-neutral-800 flex items-center justify-between">
-          <span className="text-xs text-neutral-400">Liam Beckman</span>
-          <div className="flex gap-4 text-xs text-neutral-400">
+        <div className="mt-16 pt-6 border-t border-metro-grey-mid dark:border-neutral-800 flex items-center justify-between">
+          <span className="text-xs text-muted-foreground font-sans">Liam Beckman · liam@liambeckman.com</span>
+          <div className="flex gap-4 text-xs text-muted-foreground font-sans">
             <a
-              href="https://github.com/beckmanl314/metro-ai-advisor"
+              href="https://github.com/beckmanl314/metro-ai"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
+              className="hover:text-metro-green transition-colors"
             >
               GitHub
             </a>
@@ -63,7 +107,7 @@ export default function App() {
               href="https://liambeckman.com/code"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
+              className="hover:text-metro-green transition-colors"
             >
               Portfolio
             </a>

@@ -4,40 +4,51 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 224 71.4% 4.1%;
-    --card: 0 0% 100%;
-    --card-foreground: 224 71.4% 4.1%;
-    --primary: 262.1 83.3% 57.8%;
-    --primary-foreground: 210 20% 98%;
-    --secondary: 220 14.3% 95.9%;
-    --secondary-foreground: 220.9 39.3% 11%;
-    --muted: 220 14.3% 95.9%;
-    --muted-foreground: 220 8.9% 46.1%;
-    --accent: 220 14.3% 95.9%;
-    --accent-foreground: 220.9 39.3% 11%;
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 262.1 83.3% 57.8%;
-    --radius: 0.5rem;
+    /* Metro brand colors */
+    --metro-green:        #007a4b;
+    --metro-green-mid:    #00a65a;
+    --metro-green-light:  #e6f4ee;
+    --metro-navy:         #1a2639;
+    --metro-navy-mid:     #2c3e5a;
+    --metro-grey-light:   #f5f5f5;
+    --metro-grey-mid:     #e0e0e0;
+    --metro-grey-text:    #555555;
+
+    /* shadcn tokens mapped to Metro palette */
+    --background:         0 0% 100%;
+    --foreground:         214 33% 17%;       /* navy */
+    --card:               0 0% 100%;
+    --card-foreground:    214 33% 17%;
+    --primary:            156 100% 24%;      /* metro green */
+    --primary-foreground: 0 0% 100%;
+    --secondary:          0 0% 96%;
+    --secondary-foreground: 214 33% 17%;
+    --muted:              0 0% 96%;
+    --muted-foreground:   0 0% 34%;
+    --accent:             156 100% 95%;      /* green tint */
+    --accent-foreground:  156 100% 24%;
+    --border:             0 0% 88%;
+    --input:              0 0% 88%;
+    --ring:               156 100% 24%;
+    --radius:             0.25rem;           /* Metro uses tight radii */
   }
 
   .dark {
-    --background: 224 71.4% 4.1%;
-    --foreground: 210 20% 98%;
-    --card: 224 71.4% 4.1%;
-    --card-foreground: 210 20% 98%;
-    --primary: 263.4 70% 50.4%;
-    --primary-foreground: 210 20% 98%;
-    --secondary: 215 27.9% 16.9%;
-    --secondary-foreground: 210 20% 98%;
-    --muted: 215 27.9% 16.9%;
-    --muted-foreground: 217.9 10.6% 64.9%;
-    --accent: 215 27.9% 16.9%;
-    --accent-foreground: 210 20% 98%;
-    --border: 215 27.9% 16.9%;
-    --input: 215 27.9% 16.9%;
-    --ring: 263.4 70% 50.4%;
+    --background:         214 33% 10%;
+    --foreground:         0 0% 96%;
+    --card:               214 33% 13%;
+    --card-foreground:    0 0% 96%;
+    --primary:            156 100% 35%;
+    --primary-foreground: 0 0% 100%;
+    --secondary:          214 20% 18%;
+    --secondary-foreground: 0 0% 96%;
+    --muted:              214 20% 18%;
+    --muted-foreground:   214 10% 65%;
+    --accent:             156 40% 18%;
+    --accent-foreground:  156 100% 70%;
+    --border:             214 20% 22%;
+    --input:              214 20% 22%;
+    --ring:               156 100% 35%;
   }
 }
 
@@ -47,5 +58,9 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Source Serif 4', Georgia, serif;
   }
 }

@@ -30,6 +30,20 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        metro: {
+          green:       "#007a4b",
+          "green-mid": "#00a65a",
+          "green-light":"#e6f4ee",
+          navy:        "#1a2639",
+          "navy-mid":  "#2c3e5a",
+          "grey-light":"#f5f5f5",
+          "grey-mid":  "#e0e0e0",
+          "grey-text": "#555555",
+        },
+      },
+      fontFamily: {
+        sans:  ["Source Sans 3", "system-ui", "sans-serif"],
+        serif: ["Source Serif 4", "Georgia", "serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
