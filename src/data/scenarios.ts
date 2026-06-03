@@ -9,7 +9,7 @@ export interface Scenario {
 export const scenarios: Scenario[] = [
   {
     id: "workflow-design",
-    title: "Permit Application Routing",
+    title: "1. Permit Application Routing",
     category: "Workflow Design",
     prompt:
       "A parks department coordinator manually emails PDF permit applications to three different reviewers, waits for replies, and tracks status in a spreadsheet. How would you automate this?",
@@ -152,7 +152,7 @@ That routing logic is the core of the entire flow. Everything else is configurab
   },
   {
     id: "compliance-gating",
-    title: "Public Recycling Chatbot",
+    title: "2. Public Recycling Chatbot",
     category: "Compliance Gating",
     prompt:
       "We want to build a chatbot that answers questions from the public about their recycling pickup schedule using address lookup. What do we need to figure out before we build this?",
@@ -276,7 +276,7 @@ If the answer is "a spreadsheet" or "I'm not sure," that's your Phase 1 work —
   },
   {
     id: "prompt-review",
-    title: "HR Policy Agent Prompt Review",
+    title: "3. HR Policy Agent Prompt Review",
     category: "Prompt Review",
     prompt:
       'Review this agent prompt: "You are a helpful assistant. Answer any questions from Metro staff about HR policies based on the documents provided."',

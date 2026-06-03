@@ -64,3 +64,19 @@
     font-family: 'Source Serif 4', Georgia, serif;
   }
 }
+
+@layer components {
+  .scenario-prose pre {
+    @apply text-neutral-100 text-xs font-mono text-left
+           rounded-lg overflow-x-auto max-w-full
+           border border-neutral-800 shadow-sm;
+    background-color: var(--metro-navy);
+    border-left: 3px solid var(--metro-green);
+  }
+
+  .scenario-prose :not(pre) > code {
+    @apply px-1.5 py-0.5 rounded text-xs font-mono
+           bg-neutral-200 text-neutral-800
+           dark:bg-neutral-700 dark:text-neutral-200;
+  }
+}
